@@ -94,4 +94,6 @@ DROP USER ‘demo’@‘localhost’;
 Referencias:
 
 https://thechemicallinux.wordpress.com/2013/06/25/easy-installation-of-mysql-in-linux-mint-15/
-https://www.digitalocean.com/community/tutorials/como-criar-um-novo-usuario-e-conceder-permissoes-no-mysql-pt 
+https://www.digitalocean.com/community/tutorials/como-criar-um-novo-usuario-e-conceder-permissoes-no-mysql-pt
+
+Exemplo database download: http://www.mysqltutorial.org/mysql-sample-database.aspx 
