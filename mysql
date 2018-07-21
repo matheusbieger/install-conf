@@ -1,0 +1,97 @@
+### INSTALL ###
+
+sudo apt-get update
+sudo apt-get install mysql-client mysql-server
+
+
+## APPS AUXILIARES ##
+
+mysqlcheck
+mysqld_safe
+mysqlimport       
+mysqlpump                 
+mysqlshow                  
+mysql_upgrade              
+mysqladmin                 
+mysql_config_editor        
+mysqldump                  
+mysql_install_db           
+mysqlrepair                
+mysqlslap                  
+mysqlanalyze               
+mysqld                     
+mysqldumpslow              
+mysqloptimize              
+mysqlreport                
+mysql_ssl_rsa_setup        
+mysqlbinlog                
+mysqld_multi               
+mysql_embedded             
+mysql_plugin               
+mysql_secure_installation  
+mysql_tzinfo_to_sql  
+
+
+# Listar usuarios
+
+SELECT User FROM mysql.user;
+
+# Todas infos sobre usuarios
+
+SELECT * FROM mysql.user;
+
+# Descricao da tabela de usuários
+
+select User, Host, Password from mysql.user;
+
+# Acesso root sem senha 
+
+mysql --user=root mysql
+ou
+mysql -u root
+
+# Acesso root com senha
+
+mysql --user=root mysql -p
+ou
+mysql -u root -p 
+
+# Criação de usuário
+
+CREATE USER 'novousuario'@'localhost' IDENTIFIED BY 'password';
+
+# Todos privilegios para o usuario 
+
+GRANT ALL PRIVILEGES ON * . * TO 'novousuario'@'localhost';
+
+obs.: depois de alterar privilegios, precisa recarregá-los
+FLUSH PRIVILEGES;
+
+# Conceder permissões
+
+ALL PRIVILEGES- como vimos anteriormente, isso daria a um usuário do MySQL todo o acesso a uma determinada base de dados (ou se nenhuma base de dados for selecionada, todo o sistema)
+CREATE- permite criar novas tabelas ou bases de dados
+DROP- permite deletar tableas ou bases de dados
+DELETE- permite deletar linhas das tabelas
+INSERT- permite inserir linhas nas tabelas
+SELECT- permite utilizar o comando Select para ler bases de dados
+UPDATE- permite atualizar linhas das tabelas
+GRANT OPTION- permite conceder ou revogar privilégios de outros usuários 
+
+GRANT [tipo de permissão] ON [nome da base de dados].[nome da tabela] TO ‘[nome do usuário]’@'localhost’;
+
+# Revogar permissoes
+
+REVOKE [tipo de permissão] ON [nome da base de dados].[nome da tabela] FROM ‘[nome do usuário]’@‘localhost’;
+
+# Excluir o usuário
+
+DROP USER ‘demo’@‘localhost’;
+
+
+--
+
+Referencias:
+
+https://thechemicallinux.wordpress.com/2013/06/25/easy-installation-of-mysql-in-linux-mint-15/
+https://www.digitalocean.com/community/tutorials/como-criar-um-novo-usuario-e-conceder-permissoes-no-mysql-pt 
